@@ -1,0 +1,19 @@
+{
+  "name": "vitepress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "maximillian",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.5",
+    "vitepress": "^0.21.5"
+  },
+  "dependencies": {
+    "vuepress-plugin-tabs": "^0.3.0"
+  }
+}
