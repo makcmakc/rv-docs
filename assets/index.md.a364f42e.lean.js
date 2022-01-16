@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as a,a as t}from"./app.9d73b456.js";const m='{"title":"Hello RevPush","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","lastUpdated":1642354448598}',o={},n=t("",3),c=[n];function l(p,r,d,i,_,u){return a(),s("div",null,c)}var v=e(o,[["render",l]]);export{m as __pageData,v as default};
