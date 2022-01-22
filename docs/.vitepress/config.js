@@ -1,13 +1,36 @@
 module.exports = {
   title: 'RevPush',
   repo: ' makcmakc/rv-docs',
+  base: '/rv-docs/',
   docsDir: 'docs',
   themeConfig: {
     sidebar: {
-      '/': getGuideSidebar()
-    }
+      '/': getGuideSidebar(),
+    },
+    // page meta
+    editLinks: true,
+    editLinkText: 'GitHub',
+    lastUpdated: 'Последнее обновление',
   },
-  plugins: ['@vuepress/back-to-top']
+  markdown: {
+    config: (md, options) => {
+
+      const container = require('markdown-it-container')
+      
+      md.use(container, 'tab', {
+        render: (tokens, idx) => {
+          const token = tokens[idx]
+          const attributes = tabAttributes(token.info, options)
+
+          if (token.nesting === 1) {
+            return `<tab ${attributes}>\n`
+          } else {
+            return `</tab>\n`
+          }
+        },
+      })
+    },
+  },
 }
 
 function getGuideSidebar() {
@@ -21,7 +44,7 @@ function getGuideSidebar() {
         { text: 'Typography', link: '/guide/assets' },
         { text: 'Media', link: '/guide/markdown' },
         { text: 'Animation', link: '/guide/using-vue' },
-      ]
+      ],
     },
     {
       text: 'Form',
@@ -32,24 +55,22 @@ function getGuideSidebar() {
         { text: 'Switch', link: '/guide/api' },
         { text: 'Rate', link: '/guide/api' },
         { text: 'Select', link: '/guide/api' },
-      ]
+      ],
     },
     {
       text: 'Data',
       children: [
-        { text: 'Avatar', link: '/guide/frontmatter' },
-        { text: 'Badge', link: '/guide/theming' },
-        { text: 'Progress', link: '/guide/api' },
-        { text: 'Pagination', link: '/guide/api' },
-        { text: 'Tag', link: '/guide/api' },
-      ]
+        { text: 'Avatar', link: '/components/avatar' },
+        { text: 'Badge', link: '/components/badge' },
+        { text: 'Progress', link: '/components/progress' },
+        { text: 'Pagination', link: '/components/pagination' },
+        { text: 'Tag', link: '/components/tag' },
+      ],
     },
     {
       text: 'Feedback',
-      children: [
-        { text: 'Drawer', link: '/components/drawer' },
-      ]
-    }       
+      children: [{ text: 'Drawer', link: '/components/drawer' }],
+    },
   ]
 }
 

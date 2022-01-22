@@ -1,0 +1,120 @@
+@import './layout.css';
+@import './var.css';
+@import './code.css';
+
+/* vitepress */
+.home-hero .image {
+  width: 200px;
+  height: 200px;
+}
+
+.nav-bar .logo {
+  height: 30px;
+  margin-right: 2px;
+}
+
+.custom-block.tip {
+  border-color: var(--c-brand-light);
+}
+
+.DocSearch {
+  --docsearch-primary-color: var(--c-brand) !important;
+}
+
+/* icon-caret */
+.icon-caret-down {
+  width: 16px;
+  height: 100%;
+  position: relative;
+}
+
+.icon-caret-down::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top: 7.5px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.5px;
+  margin-left: -6px;
+}
+
+.icon-caret-up {
+  width: 16px;
+  height: 100%;
+  position: relative;
+}
+
+.icon-caret-up::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-bottom: 7px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -8.5px;
+  margin-left: -6px;
+}
+
+
+
+
+.rv-btn {
+  display: inline-block;
+  min-height: 49px;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: 1px solid;
+  border-color: transparent;
+  color: $white;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 400;
+  user-select: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
+@keyframes loading{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+// tag style btn
+.rv-tag {
+  display: inline-block;
+  line-height: 1;
+  font-weight: $fw-semibold;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: $white;
+  /* border: 1px solid neutral(3); */
+  border-radius: 5px;
+  /* color: neutral(0); */
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  position: relative;
+  transition: all 150ms;
+  user-select: none;
+  padding: 6px 20px;
+  /* @include font-xxs;  */
+}
